@@ -19,7 +19,7 @@ class _IntroPageState extends State<IntroPage> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFF3c9099),
+          color: Color(0xFF486c5e),
         ),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -28,22 +28,22 @@ class _IntroPageState extends State<IntroPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const Text(
-                'Ответьте "Да" или "Нет".\nПроверьте свои познания в познавательной викторине',
+                'Ответьте "Да" или "Нет".\nПроверьте свои знания в познавательной викторине',
                 style: TextStyle(
-                  color: Color(0xFF5fbdb0),
+                  color: Color(0xFFd7c6b4),
                   fontSize: 40,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
               const SizedBox(
-                height: 200,
+                height: 150,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF3c9099),
+                  color: const Color(0xFF486c5e),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: const Color(0xFF5fbdb0), 
+                    color: const Color(0xFFc1986c), 
                     width: 1),
                 ),
                 child: MaterialButton(
@@ -51,12 +51,12 @@ class _IntroPageState extends State<IntroPage> {
                   onPressed: () => onTap(),
                   child: const Text(
                     'Пройти тест',
-                    style: TextStyle(color: Color(0xFF5fbdb0), fontSize: 30, fontWeight: FontWeight.w300),
+                    style: TextStyle(color: Color(0xFFc1986c), fontSize: 35, fontWeight: FontWeight.w200),
                   ),
                 ),
               ),
               const SizedBox(
-                height: 200,
+                height: 100,
               ),
             ],
           ),

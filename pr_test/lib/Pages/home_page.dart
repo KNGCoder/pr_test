@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pr_test/Test/result.dart';
 import 'package:pr_test/Test/quiz.dart';
 import 'package:pr_test/my_app.dart';
+import 'package:pr_test/add.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,23 +15,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _quest = const [
-    {
-      'questionText': 'vopros1',
-      'answers': [
-        {'text': 'da', 'score': 1},
-        {'text': 'net', 'score': 0}
-      ]
-    },
-    {
-      'questionText': 'vopros2',
-      'answers': [
-        {'text': 'da', 'score': 1},
-        {'text': 'net', 'score': 0}
-      ]
-    },
-  ];
-
+  
+  final _quest = tests.shuffle();
+  
   var _questIndex = 0;
   var _totalScore = 0;
 
@@ -53,14 +40,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
       home: Scaffold(
-          body: _questIndex < _quest.length
+        backgroundColor: const Color(0xFF486c5e) ,
+          body: _questIndex < tests.length
               ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Quiz(
-                        quest: _quest,
+                        quest: tests,
                         answerQuestion: _answerQuestion,
                         questIndex: _questIndex)
                   ],
@@ -69,3 +56,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
